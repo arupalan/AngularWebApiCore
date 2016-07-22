@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
+using AngularWebApiCore.Repository;
 
 namespace AngularWebApiCore
 {
@@ -27,6 +29,7 @@ namespace AngularWebApiCore
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+            MockData.Initialize();
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -37,7 +40,15 @@ namespace AngularWebApiCore
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(opt =>
+            {
+                var resolver = opt.SerializerSettings.ContractResolver;
+                if (resolver != null)
+                {
+                    var res = resolver as DefaultContractResolver;
+                    res.NamingStrategy = null;  // <<!-- this removes the camelcasing
+                }
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

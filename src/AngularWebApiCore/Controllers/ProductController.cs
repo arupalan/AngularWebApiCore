@@ -13,10 +13,11 @@ namespace AngularWebApiCore.Controllers
     {
         private readonly ProductRepository _repository = new ProductRepository();
 
+        // GET api/Product
         [HttpGet]
-        public async Task<IEnumerable<Product>> Get()
+        public IEnumerable<Product> Get()
         {
-            return await Task.FromResult(_repository.GetProductList());
+            return _repository.GetProductList();
         }
 
         // GET api/Product/GetProductListBySubCategory/3
