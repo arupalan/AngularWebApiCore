@@ -1,0 +1,49 @@
+﻿<form class="form-horizontal" name="productForm">
+    <fieldset>
+        <legend>Basic Product Information</legend>
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputProductName">Product Name</label>
+            <div class="col-md-4">
+                <input class="form-control" style="margin-left:10px"
+                       id="inputProductName"
+                       type="text"
+                       placeholder="Product Name"
+                       ng-model="vm.product.Name" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label"
+                   for="inputProductStockLevel">Product Stock Level</label>
+            <div class="col-md-4">
+                <input class="form-control" style="margin-left:10px"
+                       id="inputProductStockLevel"
+                       type="number"
+                       placeholder="Product Stock Level"
+                       ng-model="vm.product.StockLevel" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            style="width:80px;margin-right:10px"
+                            ng-click="vm.submit()">
+                        Save
+                    </button>
+                </span>
+                <span>
+                    <a class="btn btn-default"
+                       ng-href="#product"
+                       style="width:80px">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Cancel
+                    </a>
+                </span>
+            </div>
+        </div>
+    </fieldset>
+</form>

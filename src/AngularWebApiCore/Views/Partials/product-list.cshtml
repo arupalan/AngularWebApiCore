@@ -1,0 +1,28 @@
+﻿<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ProductKey</th>
+            <th>Name</th>
+            <th>StockLevel</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="producttablebody">
+        @* TODO: List of products *@
+        <tr ng-model="minstock" ng-repeat="product in products" ng-style="(product.StockLevel < minstock ) ? {'background-color':'red'} : {}">
+            <td>{{product.ProductKey}}</td>
+            <td>
+                <a ng-href="#productDetail/{{product}}">
+                    {{product.Name}}
+                </a>
+            </td>
+            <td>{{product.StockLevel}}</td>
+            <td>
+                <a class="btn btn-primary" 
+                   ng-href="#productEdit/{{product}}">
+                    Edit
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

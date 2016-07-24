@@ -1,0 +1,14 @@
+﻿<div>
+    <label for="{{config.id}}">{{config.label}}</label>
+    <div ng-switch="config.type">
+        <input ng-switch-when="text" id="{{config.id}}" type="text" ng-model="$parent.model" />
+        <input ng-switch-when="number" id="{{config.id}}" type="number"
+               step="{{config.step}}" ng-model="$parent.model"
+               ng-change="OnChangeInput(config.id)"/>
+        <select ng-switch-when="select" id="{{config.id}}" ng-model="$parent.model"
+                ng-options="y.Name for (x, y) in  config.options"
+                ng-change="OnChangeInput(config.id)"
+                class="ng-valid ng-dirty"></select>
+        </select>
+    </div>
+</div>

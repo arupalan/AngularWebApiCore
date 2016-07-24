@@ -1,0 +1,36 @@
+﻿<div class="panel panel-primary breadcrumb">
+    <div class="panel-heading" style="font-size:large">
+        Product Details {{vm.title}}
+    </div>
+
+    <div class="panel-body" style="margin: 15px">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-4">ProductKey:</div>
+                <div class="col-md-2">{{vm.product.ProductKey}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">Product Name:</div>
+                <div class="col-md-2">{{vm.product.Name}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">Product Stock Level:</div>
+                <div class="col-md-2">{{vm.product.StockLevel}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer-panel">
+    <a class="btn btn-default"
+       ng-href="#product"
+       style="width:80px">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Back
+    </a>
+    <a class="btn btn-primary"
+       ng-href="#productEdit/{{vm.product}}"
+       style="width:80px;margin-left:10px">
+        Edit
+    </a>
+</div>

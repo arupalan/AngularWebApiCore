@@ -61,7 +61,24 @@ namespace AngularWebApiCore
 
             app.UseApplicationInsightsExceptionTelemetry();
 
-            app.UseMvc();
+            app.UseDefaultFiles(); // so index.html is not required
+            app.UseStaticFiles();
+
+
+            //app.UseMvc();
+            app.UseMvc(routes =>
+            {
+
+                routes.MapRoute(
+                    name: "Partials",
+                    template: "Partials/{partial}",
+                    defaults: new { controller = "Partials", action = "Index", partial = "{partial}" }
+                );
+
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

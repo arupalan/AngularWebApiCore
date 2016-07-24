@@ -27,7 +27,7 @@ namespace AngularWebApiCore.Controllers
         {
             //return "Hello " + name + ". Time is: " + DateTime.Now;
             if (string.IsNullOrEmpty(name))
-                name = "Johnny Doe";
+                name = "Arup Banerjee";
 
             return new { helloMessage = "Hello!  " + name + ". Time is: " + DateTime.Now };
         }

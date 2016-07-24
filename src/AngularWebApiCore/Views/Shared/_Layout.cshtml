@@ -1,0 +1,62 @@
+﻿@using System
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/toastr.min.css" rel="stylesheet" />
+</head>
+<body ng-app="app">
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <a class="navbar-brand" ui-sref="home">Angular Product Management</a>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a ng-href="#/">
+                        <i class ="glyphicon glyphicon-home"></i> Home
+                    </a>
+                </li>
+                <li>
+                    <a ng-href="#/product">
+                        <i class="glyphicon glyphicon-list-alt"></i> Product List
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="container">
+        <div>
+            @RenderBody()
+        </div>
+        <hr>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>
+                        &copy; @DateTime.Now.Year - Alan & Aamy Ltd
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Library Script -->
+    <script src="~/js/bundle.min.js"></script>
+    <script src="~/js/app.min.js"></script>>
+</body>
+</html>

@@ -1,0 +1,43 @@
+[
+  {
+    "outputFileName": "wwwroot/js/app.min.js",
+    "inputFiles": [
+      "app/app.js",
+      "app/dynamicInputjs.js",
+      "app/productCtrl.js",
+      "app/productDetailCtrl.js",
+      "app/productEditCtrl.js",
+      "app/productList.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/bundle.min.js",
+    "inputFiles": [
+      "bower_components/jquery/dist/jquery.js",
+      "bower_components/bootstrap/dist/js/bootstrap.js",
+      "bower_components/angular/angular.js",
+      "bower_components/angular-route/angular-route.js",
+      "bower_components/angular-ui-router/angular-ui-router.js",
+      "bower_components/jquery-validation/jquery.validate.js",
+      "bower_components/toastr/toastr.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/bootstrap.min.css",
+    "inputFiles": [
+      "bower_components/bootstrap/dist/css/bootstrap.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/bootstrap-theme.min.css",
+    "inputFiles": [
+      "bower_components/bootstrap/dist/css/bootstrap-theme.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/toastr.min.css",
+    "inputFiles": [
+      "bower_components/toastr/toastr.css"
+    ]
+  }
+]
