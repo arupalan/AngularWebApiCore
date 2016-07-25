@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
 
 namespace AngularWebApiCore.Controllers
 {
@@ -10,6 +11,8 @@ namespace AngularWebApiCore.Controllers
     {
         public ActionResult Index(string partial)
         {
+            ViewBag.OS = Path.DirectorySeparatorChar.ToString() == @"/" ? "Non Windows" : "Windows";
+            //ViewBag.Platform = System.Environment.OSVersion.ToString();
             return PartialView(partial);
         }
     }
